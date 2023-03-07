@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:spod_app/screen/main/main_screen.dart';
-import 'package:spod_app/screen/onboarding_screen.dart';
+import 'package:spod_app/regest/login_screen.dart';
+import 'package:spod_app/regest/signup_screen.dart';
+import 'package:spod_app/screen/main/home/home_screen.dart';
+ import 'package:spod_app/screen/onboarding_screen.dart';
 import 'package:spod_app/theme.dart';
 
 Future<void> main() async {
@@ -21,12 +23,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        LoginPage.id: (context) => LoginPage(),
+        RegisterPage.id: (context) => RegisterPage(),
+        HomeScreen.id : (context) => HomeScreen()
+      },
+      initialRoute: LoginPage.id,
+
       title: 'FooTBall Match',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: createMaterialColor(primaryColor500),
           canvasColor: colorWhite),
-      home: skipOnBoarding? MainScreen(currentScreen: 0): OnboardingScreen(),
+      home: skipOnBoarding? LoginPage(): OnboardingScreen(),
     );
   }
 }

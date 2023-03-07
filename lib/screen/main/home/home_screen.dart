@@ -8,6 +8,8 @@ import 'package:spod_app/widget/category_card.dart';
 import 'package:spod_app/widget/sport_field_card.dart';
 
 class HomeScreen extends StatelessWidget {
+  static String id = 'HomeScreen';
+
   List<SportField> fieldList = recommendedSportField;
 
   @override

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:spod_app/screen/main/main_screen.dart';
-import 'package:spod_app/theme.dart';
+import 'package:spod_app/regest/login_screen.dart';
+ import 'package:spod_app/theme.dart';
+
+
+
 
 class OnboardingScreen extends StatelessWidget {
   @override
@@ -49,18 +52,17 @@ class OnboardingScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            minimumSize: Size(100, 50),
-            shape: RoundedRectangleBorder(
-              borderRadius:
-              BorderRadius.circular(borderRadiusSize))
+              minimumSize: Size(100, 50),
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+                  BorderRadius.circular(borderRadiusSize))
           ),
           onPressed: () async {
             final prefs = await SharedPreferences.getInstance();
             await prefs.setBool("skipOnBoarding", true);
             Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-              return MainScreen(
-                currentScreen: 0,
-              );
+              return LoginPage(
+               );
             }));
           },
           child: Text(
