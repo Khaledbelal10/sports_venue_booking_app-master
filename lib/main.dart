@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:spod_app/regest/login_screen.dart';
@@ -6,9 +7,14 @@ import 'package:spod_app/screen/main/home/home_screen.dart';
  import 'package:spod_app/screen/onboarding_screen.dart';
 import 'package:spod_app/theme.dart';
 
+import 'firebase_options.dart';
+
 Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   final prefs = await SharedPreferences.getInstance();
   final skipOnBoarding = prefs.getBool("skipOnBoarding") ?? false;
   runApp(MyApp(skipOnBoarding: skipOnBoarding));

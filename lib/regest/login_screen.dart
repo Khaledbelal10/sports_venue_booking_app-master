@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:spod_app/regest/signup_screen.dart';
 import 'package:spod_app/regest/snak_bar.dart';
+import 'package:spod_app/screen/main/home/home_screen.dart';
  import 'custom_button.dart';
 import 'cutomTextfield.dart';
   import 'package:flutter/material.dart';
@@ -42,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
     return ModalProgressHUD(
       inAsyncCall: isLoading,
       child: Scaffold(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.lightBlueAccent,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Form(
@@ -100,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() {});
                       try {
                         await loginUser();
-                        Navigator.pushNamed(context, LoginPage.id,
+                        Navigator.pushNamed(context, HomeScreen.id,
                             arguments: email);
                       } on FirebaseAuthException catch (ex) {
                         if (ex.code == 'user-not-found') {

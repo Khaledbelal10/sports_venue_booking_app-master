@@ -1,27 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:spod_app/regest/cutomTextfield.dart';
+import 'package:spod_app/regest/login_screen.dart';
 import 'package:spod_app/regest/snak_bar.dart';
 import 'package:spod_app/screen/main/home/home_screen.dart';
- import 'custom_button.dart';
-import 'cutomTextfield.dart';
 
-const kTextFieldDecoration = InputDecoration(
-  hintText: 'Enter a value',
-  hintStyle: TextStyle(color: Colors.grey),
-  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-  border: OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-  ),
-  enabledBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.lightBlueAccent, width: 1.0),
-    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-  ),
-  focusedBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
-    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-  ),
-);
+import 'custom_button.dart';
+
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);
@@ -46,7 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return ModalProgressHUD(
       inAsyncCall: isLoading,
       child: Scaffold(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.lightBlueAccent,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Form(
@@ -56,12 +42,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 SizedBox(
                   height: 75,
                 ),
-                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                   ],
-                ),
-                SizedBox(
+
+                 SizedBox(
                   height: 75,
                 ),
                 Row(
@@ -102,9 +84,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       isLoading = true;
                       setState(() {});
                       try {
-                        await registerUser(email!,password!);
+                        await registerUser();
 
-                        Navigator.pushNamed(context, HomeScreen.id);
+                        Navigator.pushNamed(context, LoginPage.id);
                       } on FirebaseAuthException catch (ex) {
                         if (ex.code == 'weak-password') {
                           showSnackBar(context, 'weak password');
@@ -154,8 +136,8 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  Future<void> registerUser(String email,String password) async {
+  Future<void> registerUser() async {
     UserCredential user = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email, password: password);
+        .createUserWithEmailAndPassword(email: email!, password: password!);
   }
 }

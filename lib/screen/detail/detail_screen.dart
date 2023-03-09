@@ -59,7 +59,7 @@ class DetailScreen extends StatelessWidget {
                     ),
                     Flexible(
                       child: Text(
-                        "Rp. ${field.price} / hour",
+                        "EG. ${field.price} / hour",
                         overflow: TextOverflow.visible,
                         style: addressTextStyle,
                       ),
@@ -272,7 +272,7 @@ class DetailScreen extends StatelessWidget {
             child: PopupMenuButton(
               tooltip: "Image's Author Url",
               padding: EdgeInsets.zero,
-              icon: const Icon(CupertinoIcons.info, color: darkBlue500),
+              icon: const Icon(CupertinoIcons.map_pin_ellipse, color: darkBlue500),
               itemBuilder: (BuildContext context) => <PopupMenuEntry>[
                 PopupMenuItem(
                     enabled: false,
@@ -282,7 +282,7 @@ class DetailScreen extends StatelessWidget {
                             color: lightBlue100,
                             borderRadius: BorderRadius.circular(8)),
                         child: Text(
-                          "Image by:",
+                          "Direction To stadium:",
                           style: subTitleTextStyle,
                         ))),
                 PopupMenuItem(
@@ -290,9 +290,9 @@ class DetailScreen extends StatelessWidget {
                     child: ListTile(
                       horizontalTitleGap: 0,
                       contentPadding: EdgeInsets.zero,
-                      leading: const Icon(Icons.account_circle_outlined),
+                      leading: const Icon(Icons.directions),
                       title: Text(
-                        "${field.author} on Unsplash.com",
+                        "${field.author} ",
                         style: normalTextStyle,
                       ),
                     )),
