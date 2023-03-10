@@ -18,10 +18,8 @@ Spod is an android application which allow user to book a sport venue from anywh
 
 ### Note
 - Some Feature are still unimplemented
-- The app is using a Dummy Data (Fake Data)
-- All images of sports venue in the application are not mine, but I also include the author of each image in the app
+ - All images of sports venue in the application are not mine, but I also include the author of each image in the app
 
 ### Preview
-<img src="https://raw.githubusercontent.com/mikirinkode/sports_field_booking_app/master/assets/spod_showcase_1.png" alt="Preview 1">
-<br>
-<img src="https://raw.githubusercontent.com/mikirinkode/sports_field_booking_app/master/assets/spod_showcase_2.png" alt="Preview 2">
+ <br>
+ 
