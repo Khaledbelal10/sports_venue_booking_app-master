@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:spod_app/regest/login_screen.dart';
- import 'package:spod_app/theme.dart';
-
-
-
+import 'package:spod_app/theme.dart';
 
 class OnboardingScreen extends StatelessWidget {
   @override

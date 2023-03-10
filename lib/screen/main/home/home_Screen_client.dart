@@ -1,15 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spod_app/model/sport_field.dart';
-import 'package:spod_app/screen/search_screen.dart';
 import 'package:spod_app/theme.dart';
 import 'package:spod_app/utils/dummy_data.dart';
-import 'package:spod_app/widget/category_card.dart';
-import 'package:spod_app/widget/sport_field_card.dart';
 
-class HomeScreen extends StatelessWidget {
-  static String id = 'HomeScreen';
-  static String accountType ="user";
+class HomeScreenCli extends StatelessWidget {
+  static String id = 'client';
+  static String accountType ="client";
+
 
   List<SportField> fieldList = recommendedSportField;
 
@@ -28,41 +26,50 @@ class HomeScreen extends StatelessWidget {
                   padding:
                       const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Text(
-                    "Let's Have Fun and \nBe Healty!",
+                    "Reveal my Booking!",
                     style: greetingTextStyle,
                   ),
                 ),
-                CategoryListView(),
                 Padding(
                   padding:
                       const EdgeInsets.only(top: 8.0, left: 16.0, right: 16.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        "Recommended Venue",
-                        style: subTitleTextStyle,
+                      const SizedBox(
+                        height: 50,
                       ),
-                      TextButton(
-                          onPressed: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return SearchScreen(
-                                selectedDropdownItem: "All",
-                              );
-                            }));
-                          },
-                          child: const Text("Show All"))
+                      Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const SizedBox(
+                              height: 16,
+                            ),
+                            const SizedBox(
+                              height: 32,
+                            ),
+                            Image.asset(
+                              "assets/images/no_transaction_illustration.png",
+                              width: 150,
+                            ),
+                            const SizedBox(
+                              height: 32,
+                            ),
+                            Text(
+                              "There is no reserved playground ",
+                              style: subTitleTextStyle,
+                            ),
+                            const SizedBox(
+                              height: 32.0,
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 // RECOMMENDED FIELDS
-                Column(
-                    children: fieldList
-                        .map((fieldEntity) => SportFieldCard(
-                              field: fieldEntity,
-                            ))
-                        .toList()),
               ],
             ),
           )
@@ -82,18 +89,6 @@ class HomeScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
-                  width: 55,
-                  height: 55,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage("assets/images/user_profile_example.png"),
-                    ),
-                  ),
-                ),
                 const SizedBox(
                   width: 16,
                 ),
@@ -102,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Welcome back,",
+                      "my playing fields,",
                       style: descTextStyle,
                     ),
                     const SizedBox(
@@ -120,16 +115,6 @@ class HomeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: primaryColor500,
                   borderRadius: BorderRadius.circular(borderRadiusSize)),
-              child: IconButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return SearchScreen(
-                      selectedDropdownItem: "",
-                    );
-                  }));
-                },
-                icon: const Icon(Icons.search, color: colorWhite),
-              ),
             )
           ],
         ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../screen/search_screen.dart';
 import '../theme.dart';
 

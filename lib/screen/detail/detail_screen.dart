@@ -101,10 +101,7 @@ class DetailScreen extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Icon(
-                      Icons.account_circle_rounded,
-                      color: primaryColor500,
-                    ),
+                   
                     const SizedBox(
                       width: 16.0,
                     ),
@@ -296,18 +293,7 @@ class DetailScreen extends StatelessWidget {
                         style: normalTextStyle,
                       ),
                     )),
-                PopupMenuItem(
-                    onTap: () => launch(field.imageUrl),
-                    child: ListTile(
-                      horizontalTitleGap: 0,
-                      contentPadding: EdgeInsets.zero,
-                      leading: const Icon(Icons.image_outlined),
-                      title: Text(
-                        "See original image",
-                        style: normalTextStyle,
-                      ),
-                    )),
-              ],
+               ],
             ),
           ),
         )

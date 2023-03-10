@@ -4,10 +4,10 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:spod_app/regest/cutomTextfield.dart';
 import 'package:spod_app/regest/login_screen.dart';
 import 'package:spod_app/regest/snak_bar.dart';
-import 'package:spod_app/screen/main/home/home_screen.dart';
-
+import 'package:spod_app/model/user.dart';
+import '../route_named.dart';
+import '../user_service/user_service.dart';
 import 'custom_button.dart';
-
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key? key}) : super(key: key);
@@ -22,9 +22,13 @@ class _RegisterPageState extends State<RegisterPage> {
   String? email;
 
   String? password;
+  String? name;
+
+  String? accountType;
 
   bool isLoading = false;
 
+  UserCredential? user;
   GlobalKey<FormState> formKey = GlobalKey();
 
   @override
@@ -42,8 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 SizedBox(
                   height: 75,
                 ),
-
-                 SizedBox(
+                SizedBox(
                   height: 75,
                 ),
                 Row(
@@ -59,6 +62,15 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 const SizedBox(
                   height: 20,
+                ),
+                CustomFormTextField(
+                  onChanged: (data) {
+                    name = data;
+                  },
+                  hintText: 'Name',
+                ),
+                  SizedBox(
+                  height: 10,
                 ),
                 CustomFormTextField(
                   onChanged: (data) {
@@ -85,8 +97,16 @@ class _RegisterPageState extends State<RegisterPage> {
                       setState(() {});
                       try {
                         await registerUser();
-
-                        Navigator.pushNamed(context, LoginPage.id);
+                        await UserService().addUser(
+                            UserModel(
+                                id: user!.user!.uid,
+                                name: name!,
+                                email: email!,
+                                accountType: RouteNamed.user,
+                                imageProfile: "imageProfile")).then(
+                                (e) {
+                              Navigator.pushNamed(context, LoginPage.id);
+                            });
                       } on FirebaseAuthException catch (ex) {
                         if (ex.code == 'weak-password') {
                           showSnackBar(context, 'weak password');
@@ -137,7 +157,7 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Future<void> registerUser() async {
-    UserCredential user = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email!, password: password!);
+    user = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email!,password:password!, );
   }
 }

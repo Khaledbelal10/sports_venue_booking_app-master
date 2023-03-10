@@ -1,11 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:spod_app/regest/signup_screen.dart';
+ import 'package:spod_app/regest/signup_screen.dart';
 import 'package:spod_app/regest/snak_bar.dart';
-import 'package:spod_app/screen/main/home/home_screen.dart';
- import 'custom_button.dart';
+import 'package:spod_app/model/user.dart';
+import 'package:spod_app/screen/main/home/home_Screen_client.dart';
+ import '../screen/main/home/home_screen.dart';
+import '../user_service/user_service.dart';
+import 'custom_button.dart';
 import 'cutomTextfield.dart';
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 const kTextFieldDecoration = InputDecoration(
     hintText: 'Enter a value',
@@ -38,6 +41,7 @@ class _LoginPageState extends State<LoginPage> {
   GlobalKey<FormState> formKey = GlobalKey();
 
   String? email, password;
+  UserCredential? user;
   @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
@@ -53,10 +57,10 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 75,
                 ),
-                 Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                   ],
+                  ],
                 ),
                 SizedBox(
                   height: 75,
@@ -101,7 +105,8 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() {});
                       try {
                         await loginUser();
-                        Navigator.pushNamed(context, HomeScreen.id,
+                        UserModel userModel=await UserService().getUser(user!.user!.uid);
+                        Navigator.pushNamed(context,userModel.accountType ,
                             arguments: email);
                       } on FirebaseAuthException catch (ex) {
                         if (ex.code == 'user-not-found') {
@@ -154,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> loginUser() async {
-    UserCredential user = await FirebaseAuth.instance
+    user = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email!, password: password!);
   }
 }

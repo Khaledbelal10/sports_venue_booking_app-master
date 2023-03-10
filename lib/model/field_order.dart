@@ -3,7 +3,7 @@ import 'package:spod_app/model/user.dart';
 
 class FieldOrder {
   SportField field;
-  User user;
+  UserModel user;
   String selectedDate;
   List<String> selectedTime;
   bool paidStatus;

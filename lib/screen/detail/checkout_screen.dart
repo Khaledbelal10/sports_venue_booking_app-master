@@ -186,7 +186,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   style: descTextStyle,
                 ),
                 Text(
-                  "Rp $_totalBill",
+                  "EG $_totalBill",
                   style: priceTextStyle,
                 ),
               ],

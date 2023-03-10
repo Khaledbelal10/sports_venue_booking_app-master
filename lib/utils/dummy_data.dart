@@ -4,10 +4,10 @@ import 'package:spod_app/model/sport_category.dart';
 import 'package:spod_app/model/sport_field.dart';
 import 'package:spod_app/model/user.dart';
 
-var sampleUser = User(
+var sampleUser = UserModel(
     id: "khaledbelal",
     name: "khaled belal",
-    email: "khaledbelal@mail.com",
+    email: "khaledbelal@gmail.com",
     accountType: "Premium",
     imageProfile: "assets/images/user_profile_example.png");
 
@@ -62,7 +62,7 @@ SportField futsalRiono = SportField(
   openTime: "08.00",
   closeTime: "16.00",
   imageAsset: "assets/images/pringsewu_futsal.jpg",
-  price: 80000,
+  price: 50,
   author: "Go to the stadium",
   authorUrl: "https://www.google.com/maps/place/%D9%85%D8%B1%D9%83%D8%B2+%D8%B4%D8%A8%D8%A7%D8%A8+%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D8%B9+%D8%A7%D9%84%D8%AE%D8%A7%D9%85%D8%B3%E2%80%AD/@29.9815909,31.6098949,11z/data=!4m10!1m2!2m1!1z2YXZhNin2LnYqCDYrdis2LIg2YPZiNix2Ycg2YLYr9mFINin2YTYqtit2YXYuSDYp9mE2K7Yp9mF2LM!3m6!1s0x14583cbc7b7f91bb:0xaa95498390edad3e!8m2!3d29.9959757!4d31.4279366!15sCjvZhdmE2KfYudioINit2KzYsiDZg9mI2LHZhyDZgtiv2YUg2KfZhNiq2K3Zhdi5INin2YTYrtin2YXYs1o9IjvZhdmE2KfYudioINit2KzYsiDZg9mI2LHZhyDZgtiv2YUg2KfZhNiq2K3Zhdi5INin2YTYrtin2YXYs5IBC3Nwb3J0c19jbHVimgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU41TkdSMVNGUlJFQUXgAQA!16s%2Fg%2F123594k4k",
   imageUrl: "https://unsplash.com/photos/oXCgQRsb2ug",
@@ -79,7 +79,7 @@ SportField futsalRionov = SportField(
   openTime: "08.00",
   closeTime: "16.00",
   imageAsset: "assets/images/pringsewu_futsal.jpg",
-  price: 80000,
+  price: 200,
   author: "Go to the stadium",
   authorUrl: "https://www.google.com/maps/place/%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D8%B9+%D9%87%D8%A7%D9%8A%D8%AA%D8%B3%E2%80%AD/@29.9815909,31.6098949,11z/data=!4m10!1m2!2m1!1z2YXZhNin2LnYqCDYrdis2LIg2YPZiNix2Ycg2YLYr9mFINin2YTYqtit2YXYuSDYp9mE2K7Yp9mF2LM!3m6!1s0x14583cab1807a803:0xe95413d2d2f88d4d!8m2!3d29.981576!4d31.444181!15sCjvZhdmE2KfYudioINit2KzYsiDZg9mI2LHZhyDZgtiv2YUg2KfZhNiq2K3Zhdi5INin2YTYrtin2YXYs1o9IjvZhdmE2KfYudioINit2KzYsiDZg9mI2LHZhyDZgtiv2YUg2KfZhNiq2K3Zhdi5INin2YTYrtin2YXYs5IBBGNsdWKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUkhOVGxwWTBKM0VBReABAA!16s%2Fg%2F1tjp9qzx",
   imageUrl: "https://unsplash.com/photos/oXCgQRsb2ug",
@@ -102,34 +102,34 @@ SportField basketballVio = SportField(
     price: 250);
 SportField volleyTanjung = SportField(
     id: "03",
-    name: "Voli Tanjung",
-    address: "Tanjung Tinggi street no. 9",
+    name: "Volley Ball Court Royal sporting club",
+    address: "2G6F+CJ5، قسم أول القاهرة الجديدة، محافظة القاهرة  4760001",
     category: _volley,
     facilities: [_wifi, _toilet, _canteen, _chargingArea, _changingRoom],
     author: "Go to the stadium",
-    authorUrl: "https://unsplash.com/@merittthomas",
+    authorUrl: "https://www.google.com/search?q=Volley+Ball+Court+Royal+sporting+club&tbm=lcl&sxsrf=AJOqlzXonbMNhwjRIqqmuRaDZ5-EpamWHw%3A1678406681620&ei=GXQKZMO4JaakkdUP8um-iAg&ved=0ahUKEwiDqa-QiND9AhUmUqQEHfK0D4EQ4dUDCAk&oq=Volley+Ball+Court+Royal+sporting+club&gs_lcp=Cg1nd3Mtd2l6LWxvY2FsEAwyBwghEKABEAo6BwgjEOoCECdQ-AhY-AhgixVoAXAAeACAAbsBiAG7AZIBAzAuMZgBAKABAaABArABCsABAQ&sclient=gws-wiz-local#rlfi=hd:;si:8641250360748423264;mv:[[30.0130818,31.5322116],[29.992465199999994,31.4222971]]",
     imageUrl: "https://unsplash.com/photos/rgo4m8J0H2M",
     phoneNumber: "01125569587",
     openDay: "All Day",
     openTime: "07.00",
     closeTime: "17.00",
     imageAsset: "assets/images/voli_pantai.jpg",
-    price: 115000);
+    price: 115);
 SportField tableTennisDCortez = SportField(
     id: "04",
-    name: "Table Tennis D’cortez",
-    address: "Sukamakmur street no. 24",
+    name: "International Bowling Centre",
+    address: "38F5+688، ممر داخل الاستاد، الأستاد، مدينة نصر، محافظة القاهرة 4436021",
     category: _tableTennis,
     facilities: [_wifi, _toilet, _canteen],
     author: "Ivan cortez",
-    authorUrl: "https://unsplash.com/@ivancortez14",
+    authorUrl: "https://www.google.com/maps/place/%D9%85%D8%B1%D9%83%D8%B2+%D8%A7%D9%84%D8%A8%D9%88%D9%84%D9%8A%D9%86%D8%AC+%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A%E2%80%AD/@30.0730264,31.3083181,15z/data=!4m6!3m5!1s0x14583fb4cc95fe09:0x6ef2f5c6c91e92cd!8m2!3d30.0730264!4d31.3083181!16s%2Fg%2F11cms6krrr",
     imageUrl: "https://unsplash.com/photos/c9aGBqkeoE4",
-    phoneNumber: "0833 4444 5555",
+    phoneNumber: "0222612122",
     openDay: "All Day",
     openTime: "09.00",
     closeTime: "23.00",
     imageAsset: "assets/images/tenis_meja_cortez.jpg",
-    price: 50000);
+    price: 150);
 SportField basketballKali = SportField(
     id: "05",
     name: "Obour Club basketball court",
@@ -160,39 +160,39 @@ SportField basketballLM = SportField(
     openTime: "09.00",
     closeTime: "18.00",
     imageAsset: "assets/images/lm_basketball.jpg",
-    price: 85000);
+    price: 500);
 
 SportField tennisDC = SportField(
     id: "07",
-    name: "DC Tennis Court",
-    address: "Kartanegara street no 76",
+    name: "Coachium Tennis Academy",
+    address: " لعبور، محافظة القاهرة 6360224",
     category: _tennis,
     facilities: [_wifi, _toilet, _locker],
     author: "Go to the stadium",
-    authorUrl: "https://unsplash.com/photos/hAr9Nlo2Fz4",
+    authorUrl: "https://www.google.com/search?q=coachium+tennis+academy&tbm=lcl&sxsrf=AJOqlzVATeKO95Sxob9Dqlp5VI2m_5YYfA%3A1678406406206&ei=BnMKZPGVDIqvkdUPuo6-8AE&oq=Coachium+Tennis+Academy&gs_lcp=Cg1nd3Mtd2l6LWxvY2FsEAEYADIICAAQgAQQywE6AggmUKoIWKoIYKkTaAJwAHgAgAFsiAHVAZIBAzAuMpgBAKABAqABAcABAQ&sclient=gws-wiz-local#rlfi=hd:;si:5191030360441923415;mv:[[30.248269999999998,31.503982500000003],[29.979152700000004,31.2995619]]",
     imageUrl: "https://unsplash.com/@noripurrs",
-    phoneNumber: "0811 2222 3333",
+    phoneNumber: " 0106 888 9647",
     openDay: "All Day",
     openTime: "08.00",
     closeTime: "17.00",
     imageAsset: "assets/images/dc_tennis_court.jpg",
-    price: 65000);
+    price: 250);
 
 SportField tennisCoates = SportField(
     id: "08",
-    name: "Tennis Coates",
-    address: "Prakasa street no. 29",
+    name: "Tennis courts - Al-Zohor Club in the assembly",
+    address: "2F9R+24H، المستثمرين الجنوبية،، قسم أول القاهرة الجديدة، محافظة القاهرة",
     category: _tennis,
     facilities: [_toilet, _changingRoom, _chargingArea],
     author: "Go to the stadium",
-    authorUrl: "https://unsplash.com/@itsrobcoates",
+    authorUrl: "https://www.google.com/search?q=%D9%85%D9%84%D8%A7%D8%B9%D8%A8+%D8%AA%D9%86%D8%B3+-+%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B2%D9%87%D9%88%D8%B1+%D8%A8%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D8%B9&biw=1366&bih=657&sxsrf=AJOqlzWxHTlmr6xgL5CrFJweip9phRjZRQ:1678408898558&ei=wnwKZOXYIbmnkdUPmbG9oAU&ved=0ahUKEwjlwb6xkND9AhW5U6QEHZlYD1QQ4dUDCAk&uact=5&oq=%D9%85%D9%84%D8%A7%D8%B9%D8%A8+%D8%AA%D9%86%D8%B3+-+%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%B2%D9%87%D9%88%D8%B1+%D8%A8%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D8%B9&gs_lcp=Cg1nd3Mtd2l6LWxvY2FsEAMyAggmOgQIIxAnUKoTWKoTYKYlaANwAHgAgAGJAYgBhAKSAQMwLjKYAQCgAQKgAQHAAQE&sclient=gws-wiz-local&ibp=gwp;0,6#istate=lrl:mlt&rlmlel=1&trex=m_r:1,m_t:gwp,ru_gs_l:maps-nearby..0.142.0.0.0.4122.1.1.0.0.0.0.1720.1720.8-1.1.0....0.....64.maps-nearby..0.1.1715....0.b8hMjEgXTik,ru_gwp:0%252C6,ru_nrby:1,ru_oq:%25D9%2585%25D9%2584%25D8%25A7%25D8%25B9%25D8%25A8%2520%25D8%25AA%25D9%2586%25D8%25B3%2520-%2520%25D9%2586%25D8%25A7%25D8%25AF%25D9%258A%2520%25D8%25A7%25D9%2584%25D8%25B2%25D9%2587%25D9%2588%25D8%25B1%2520%25D8%25A8%25D8%25A7%25D9%2584%25D8%25AA%25D8%25AC%25D9%2585%25D8%25B9,ru_q:%25D9%2585%25D9%2584%25D8%25A7%25D8%25B9%25D8%25A8%2520%25D8%25AA%25D9%2586%25D8%25B3%2520-%2520%25D9%2586%25D8%25A7%25D8%25AF%25D9%258A%2520%25D8%25A7%25D9%2584%25D8%25B2%25D9%2587%25D9%2588%25D8%25B1%2520%25D8%25A8%25D8%25A7%25D9%2584%25D8%25AA%25D8%25AC%25D9%2585%25D8%25B9%25D8%258C%2520%25D9%2582%25D8%25B3%25D9%2585%2520%25D8%25A3%25D9%2588%25D9%2584%2520%25D8%25A7%25D9%2584%25D9%2582%25D8%25A7%25D9%2587%25D8%25B1%25D8%25A9%2520%25D8%25A7%25D9%2584%25D8%25AC%25D8%25AF%25D9%258A%25D8%25AF%25D8%25A9,ru_start:0 ",
     imageUrl: "https://unsplash.com/photos/BDCTRVu7DwY",
-    phoneNumber: "0877 8888 9999",
+    phoneNumber: "01112138399",
     openDay: "All Day",
     openTime: "08.00",
     closeTime: "15.00",
     imageAsset: "assets/images/tennis_coates.jpg",
-    price: 60000);
+    price: 600);
 
 SportField futsalJaya = SportField(
     id: "09",
@@ -208,23 +208,23 @@ SportField futsalJaya = SportField(
     openTime: "08.00",
     closeTime: "18.00",
     imageAsset: "assets/images/jaya_futsal.jpg",
-    price: 70000);
+    price: 150);
 
 SportField tennisWing = SportField(
     id: "010",
-    name: "Wing Sport Center",
-    address: "Veteran street no. 93",
+    name: "Tennis Court Royal Sporting Club",
+    address: "2G6G+J35، قسم أول القاهرة الجديدة، محافظة القاهرة 4760001",
     category: _tennis,
     facilities: [_toilet, _changingRoom, _locker, _canteen],
     author: "Go to the stadium",
-    authorUrl: "https://unsplash.com/@sergeiwing",
+    authorUrl: "https://www.google.com/maps/place/Tennis+Court+Royal+Sporting+Club/@30.0115249,31.5252468,15z/data=!4m6!3m5!1s0x145823ddc834bea7:0x6d60d54b29115f5c!8m2!3d30.0115249!4d31.5252468!16s%2Fg%2F11f7qz91dt",
     imageUrl: "https://unsplash.com/photos/Bt-oCv_YI3E",
-    phoneNumber: "0899 1010 2222",
+    phoneNumber: "01141548843",
     openDay: "All Day",
     openTime: "09.00",
     closeTime: "17.00",
     imageAsset: "assets/images/wing_tennis.jpg",
-    price: 80000);
+    price: 150);
 
 
 List<SportField> sportFieldList = [

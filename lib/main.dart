@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:spod_app/regest/login_screen.dart';
 import 'package:spod_app/regest/signup_screen.dart';
+import 'package:spod_app/regest/welcome_screen.dart';
+import 'package:spod_app/route_named.dart';
+import 'package:spod_app/screen/main/home/home_Screen_client.dart';
 import 'package:spod_app/screen/main/home/home_screen.dart';
  import 'package:spod_app/screen/onboarding_screen.dart';
 import 'package:spod_app/theme.dart';
@@ -32,7 +35,10 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginPage.id: (context) => LoginPage(),
         RegisterPage.id: (context) => RegisterPage(),
-        HomeScreen.id : (context) => HomeScreen()
+    RouteNamed.user : (context) => HomeScreen(),
+        RouteNamed.client : (context) => HomeScreenCli(),
+
+
       },
       initialRoute: LoginPage.id,
 

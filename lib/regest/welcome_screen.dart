@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../route_named.dart';
 import 'rounded_button.dart';
 
 
@@ -22,14 +23,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   colour: Colors.lightBlueAccent,
                   title: 'Have a Stadium',
                   onPressed: () {
-                    Navigator.pushNamed(context, 'Have a Stadium');
+                    Navigator.pushNamed(context, RouteNamed.client);
                   },
                 ),
                 RoundedButton(
                     colour: Colors.blueAccent,
-                    title: 'Play',
+                    title: 'Find a  stadium',
                     onPressed: () {
-                      Navigator.pushNamed(context, 'signup_screen');
+                      Navigator.pushNamed(context,   RouteNamed.user );
                     }),
               ]),
         ));
