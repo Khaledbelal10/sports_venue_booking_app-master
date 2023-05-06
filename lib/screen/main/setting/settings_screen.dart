@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spod_app/utils/dummy_data.dart';
@@ -5,6 +6,8 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../theme.dart';
 
 class SettingsScreen extends StatelessWidget {
+  final useri =FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +61,7 @@ class SettingsScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              sampleUser.name,
+                             useri!.email!,
                               style: subTitleTextStyle,
                             ),
                             const SizedBox(

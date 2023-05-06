@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spod_app/model/sport_field.dart';
@@ -10,9 +11,8 @@ import 'package:spod_app/widget/sport_field_card.dart';
 class HomeScreen extends StatelessWidget {
   static String id = 'HomeScreen';
   static String accountType ="user";
-
+  final useri =FirebaseAuth.instance.currentUser;
   List<SportField> fieldList = recommendedSportField;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                       height: 4,
                     ),
                     Text(
-                      sampleUser.name,
+                      useri!.email!,
                       style: subTitleTextStyle,
                     ),
                   ],

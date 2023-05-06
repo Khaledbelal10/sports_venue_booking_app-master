@@ -1,12 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:spod_app/regest/cutomTextfield.dart';
 import 'package:spod_app/regest/login_screen.dart';
 import 'package:spod_app/regest/snak_bar.dart';
 import 'package:spod_app/model/user.dart';
+import 'package:spod_app/service/user_service.dart';
 import '../route_named.dart';
-import '../user_service/user_service.dart';
 import 'custom_button.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -43,11 +44,10 @@ class _RegisterPageState extends State<RegisterPage> {
             key: formKey,
             child: ListView(
               children: [
-                SizedBox(
-                  height: 75,
-                ),
-                SizedBox(
-                  height: 75,
+                Lottie.network("https://assets1.lottiefiles.com/packages/lf20_meHEbIfGxc.json"),
+
+                 SizedBox(
+                  height: 40,
                 ),
                 Row(
                   children: [
@@ -158,6 +158,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Future<void> registerUser() async {
     user = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email!,password:password!, );
+        .createUserWithEmailAndPassword(email: email!,password:password!,);
   }
 }

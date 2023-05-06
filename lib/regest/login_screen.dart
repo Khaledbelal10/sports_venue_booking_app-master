@@ -1,11 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:lottie/lottie.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
  import 'package:spod_app/regest/signup_screen.dart';
 import 'package:spod_app/regest/snak_bar.dart';
 import 'package:spod_app/model/user.dart';
 import 'package:spod_app/screen/main/home/home_Screen_client.dart';
- import '../screen/main/home/home_screen.dart';
-import '../user_service/user_service.dart';
+import 'package:spod_app/service/user_service.dart';
+import '../screen/main/home/home_screen.dart';
 import 'custom_button.dart';
 import 'cutomTextfield.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,12 @@ class _LoginPageState extends State<LoginPage> {
             child: ListView(
               children: [
                 SizedBox(
-                  height: 75,
+                  height: 15,
+                ),
+
+                Lottie.network("https://assets1.lottiefiles.com/packages/lf20_yLCHY6q3aU.json"),
+                SizedBox(
+                  height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

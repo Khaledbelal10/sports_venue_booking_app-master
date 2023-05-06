@@ -72,97 +72,97 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           ),
           SliverPadding(
             padding:
-                const EdgeInsets.only(right: 24, left: 24, bottom: 24, top: 8),
+            const EdgeInsets.only(right: 24, left: 24, bottom: 24, top: 8),
             sliver: SliverList(
                 delegate: SliverChildListDelegate([
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    "Venue Name",
-                    style: subTitleTextStyle,
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                        border: Border.all(color: primaryColor100, width: 2),
-                        color: lightBlue100,
-                        borderRadius: BorderRadius.circular(borderRadiusSize)),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "assets/icons/pin.png",
-                          width: 24,
-                          height: 24,
-                          color: primaryColor500,
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        Text(widget.field.name,
-                            style: normalTextStyle.copyWith(
-                                fontWeight: FontWeight.w600)),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  Text(
-                    "Pick a date",
-                    style: subTitleTextStyle,
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      _selectDate();
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: primaryColor100, width: 2),
-                          color: lightBlue100,
-                          borderRadius:
-                              BorderRadius.circular(borderRadiusSize)),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.date_range_rounded,
-                            color: primaryColor500,
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            _dateTime == null
-                                ? "date not selected.."
-                                : dateFormat.format(_dateTime).toString(),
-                            style: normalTextStyle,
-                          ),
-                        ],
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        "Venue Name",
+                        style: subTitleTextStyle,
                       ),
-                    ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: primaryColor100, width: 2),
+                            color: lightBlue100,
+                            borderRadius: BorderRadius.circular(borderRadiusSize)),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              "assets/icons/pin.png",
+                              width: 24,
+                              height: 24,
+                              color: primaryColor500,
+                            ),
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            Text(widget.field.name,
+                                style: normalTextStyle.copyWith(
+                                    fontWeight: FontWeight.w600)),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 32,
+                      ),
+                      Text(
+                        "Pick a date",
+                        style: subTitleTextStyle,
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          _selectDate();
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: primaryColor100, width: 2),
+                              color: lightBlue100,
+                              borderRadius:
+                              BorderRadius.circular(borderRadiusSize)),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.date_range_rounded,
+                                color: primaryColor500,
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              Text(
+                                _dateTime == null
+                                    ? "date not selected.."
+                                    : dateFormat.format(_dateTime).toString(),
+                                style: normalTextStyle,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 32,
+                      ),
+                      Text(
+                        "Pick a Time",
+                        style: subTitleTextStyle,
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      ...availableBookTime.map(buildSingleCheckBox).toList(),
+                    ],
                   ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  Text(
-                    "Pick a Time",
-                    style: subTitleTextStyle,
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  ...availableBookTime.map(buildSingleCheckBox).toList(),
-                ],
-              ),
-            ])),
+                ])),
           )
         ],
       ),
@@ -200,31 +200,31 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       minimumSize: Size(100, 45),
                       shape: RoundedRectangleBorder(
                           borderRadius:
-                              BorderRadius.circular(borderRadiusSize))),
+                          BorderRadius.circular(borderRadiusSize))),
                   onPressed: !_enableCreateOrderBtn
                       ? null
                       : () {
-                          List<String> selectedTime = [];
-                          for (int i = 0; i < availableBookTime.length; i++) {
-                            if (availableBookTime[i].value) {
-                              selectedTime.add(availableBookTime[i].title);
-                            }
-                          }
-                          dummyUserOrderList.add(FieldOrder(
-                              field: widget.field,
-                              user: sampleUser,
-                              selectedDate:
-                                  dateFormat.format(_dateTime).toString(),
-                              selectedTime: selectedTime));
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      MainScreen(currentScreen: 1)),
-                              (route) => false);
-                          _showSnackBar(
-                              context, "Successfully create an order");
-                        },
+                    List<String> selectedTime = [];
+                    for (int i = 0; i < availableBookTime.length; i++) {
+                      if (availableBookTime[i].value) {
+                        selectedTime.add(availableBookTime[i].title);
+                      }
+                    }
+                    dummyUserOrderList.add(FieldOrder(
+                        field: widget.field,
+                        user: sampleUser,
+                        selectedDate:
+                        dateFormat.format(_dateTime).toString(),
+                        selectedTime: selectedTime));
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                MainScreen(currentScreen: 1)),
+                            (route) => false);
+                    _showSnackBar(
+                        context, "Successfully create an order");
+                  },
                   child: Text(
                     "Create Order",
                     style: buttonTextStyle,
@@ -254,10 +254,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
   void _selectDate() async {
     await showDatePicker(
-            context: context,
-            initialDate: DateTime.now(),
-            firstDate: DateTime.now(),
-            lastDate: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day + 6))
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime.now(),
+        lastDate: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day + 6))
         .then((value) {
       setState(() {
         _dateTime = value!;
